@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import Skill from "./memoCounter";
+import Skill from "./skills";
 
 function App() {
   const [text, setText] = useState("");
