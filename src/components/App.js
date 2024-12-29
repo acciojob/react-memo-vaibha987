@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import UseMemo from "./components/usememo";
-import Reactmemo from "./components/reactmemo";
+import UseMemo from "./usememo";
+import ReactMemo from "./reactmemo";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -24,7 +24,7 @@ const App = () => {
       <UseMemo />
       <hr />
       <hr />
-      <Reactmemo />
+      <ReactMemo />
     </div>
   );
 };
