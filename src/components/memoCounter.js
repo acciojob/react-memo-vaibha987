@@ -1,18 +1,13 @@
-import React, { useState } from 'react'
+import React, { memo } from "react";
 
-const MemoCounter = () => {
+const Skill = ({ allSkills }) => {
+  return (
+    <ul>
+      {allSkills.map((skill, index) => (
+        <li key={index}>{skill}</li>
+      ))}
+    </ul>
+  );
+};
 
-    const [count, setCount] = useState(0)
-
-    const Increment = (e) => {
-        setCount(count + 1)
-    }
-    return (
-        <div>
-            <span>Count:{count}</span>
-            <button onClick={Increment}>+</button>
-        </div >
-    )
-}
-
-export default MemoCounter
+export default memo(Skill);
