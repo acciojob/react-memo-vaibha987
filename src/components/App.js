@@ -26,7 +26,7 @@ function App() {
     <>
       <h1>My todos</h1>
       <p>{text}</p>
-      <button onClick={() => setText("New Todo")}>Add Todo</button>
+      <button onClick={() => setText("New Todo")} data-testid="add-todo-button">Add Todo</button>
       <hr />
 
       <h1>Count: {count}</h1>
