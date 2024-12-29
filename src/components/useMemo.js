@@ -1,25 +1,26 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from 'react'
 
-const UseMemo = () => {
-  const [count, setCount] = useState(0);
+const ReactmemoTodo = () => {
 
-  const result = useMemo(() => {
-    return count * 2;
-  }, [count]);
+    const [todo, setTodo] = useState([])
 
-  const onIncrease = () => {
-    setCount(count + 1);
-  };
-  return (
-    <div>
-      <div>
-        <span>Count:{count}</span>
-        <button onClick={onIncrease}>+</button>
-      </div>
-      <h2>Expensive Calculation</h2>
-      {result}
-    </div>
-  );
-};
+    const AddTodo = (e) => {
+        e.preventDefault()
+        setTodo((prevTodos) => [prevTodos, "New Todo"])
+    }
 
-export default UseMemo;
+    return (
+        <div>
+            <h1>React.useMemo</h1>
+            <h2>My todos</h2>
+            <ul>
+                {todo.map((todos, index) => (
+                    <li key={index}>{todos}</li>
+                ))}
+            </ul>
+            <button onClick={AddTodo}>Add Todo</button>
+        </div>
+    )
+}
+
+export default ReactmemoTodo
