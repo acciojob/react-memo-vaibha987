@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import UseMemo from "./UseMemo";
-import ReactMemo from "./ReactMemo";
+import UseMemo from "./useMemo";
+import ReactMemo from "./reactMemo";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
