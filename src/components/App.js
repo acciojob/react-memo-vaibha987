@@ -1,32 +1,30 @@
-import React, { useState } from "react";
-import UseMemo from "./useMemo";
-import ReactMemo from "./reactMemo";
+import React, { useState, useMemo } from 'react';
+import ReactmemoTodo from './reactMemo';
+import MemoCounter from './memoCounter';
+import MemoList from './useMemo';
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
+    const [counter, setCounter] = useState(0);
 
-  const onAdd = () => {
-    setTasks((prev) => [...prev, "New Todo"]);
-  };
-  return (
-    <div id="main">
-      <h1>React.useMemo</h1>
-      <h2>My todos</h2>
-      <ul>
-        {tasks.map((i, index) => (
-          <li key={index}>{i}</li>
-        ))}
-      </ul>
+    // UseMemo Example: Expensive calculation based on counter
+    const expensiveCalculation = useMemo(() => {
+        console.log("Performing expensive calculation...");
+        return counter * 2;
+    }, [counter]);
 
-      <button onClick={onAdd}>Add Todo</button>
-
-      <hr />
-      <UseMemo />
-      <hr />
-      <hr />
-      <ReactMemo />
-    </div>
-  );
+    return (
+        <div>
+            <h1>Task Management App</h1>
+            <MemoCounter />
+            <ReactmemoTodo />
+            <MemoList />
+            <div>
+                <h2>Expensive Calculation</h2>
+                <p>Result: {expensiveCalculation}</p>
+                <button onClick={() => setCounter(counter + 1)}>Increment Counter</button>
+            </div>
+        </div>
+    );
 };
 
 export default App;
