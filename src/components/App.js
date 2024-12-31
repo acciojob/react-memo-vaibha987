@@ -18,7 +18,7 @@ const MemoPage = () => {
         ))}
       </ul>
 
-      <button onClick={onAdd}>Add Todo</button>
+      <button data-cy="add-todo-button" onClick={onAdd}>Add Todo</button>
 
       <hr />
       <UseMemo />
