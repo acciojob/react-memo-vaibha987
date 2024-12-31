@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import UseMemo from "./UseMemo";
 import ReactMemo from "./ReactMemo";
 
-const MemoPage = () => {
+const App = () => {
   const [tasks, setTasks] = useState([]);
 
   const onAdd = () => {
@@ -18,7 +18,7 @@ const MemoPage = () => {
         ))}
       </ul>
 
-      <button data-cy="add-todo-button" onClick={onAdd}>Add Todo</button>
+      <button onClick={onAdd}>Add Todo</button>
 
       <hr />
       <UseMemo />
@@ -29,4 +29,4 @@ const MemoPage = () => {
   );
 };
 
-export default MemoPage;
+export default App;
