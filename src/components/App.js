@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import Skill from "./skills";
+import "./styles.css"
 
 function App() {
   const [text, setText] = useState("");
